@@ -13,23 +13,21 @@
 
 #define LOGO_OFFSET           0.2f //How far a logo sticks out from the given surface
 
-#include <windows.h>
-#include <math.h>
-#include <gl\gl.h>
-#include <gl\glu.h>
-#include <gl\glaux.h>
-#include "glTypes.h"
+#include <cmath>
+#include <GL/gl.h>
+#include <GL/glu.h>
 
-#include "deco.h"
-#include "light.h"
-#include "mesh.h"
-#include "macro.h"
-#include "math.h"
-#include "random.h"
-#include "render.h"
-#include "texture.h"
-#include "world.h"
-#include "visible.h"
+#include "glTypes.h"
+#include "Deco.h"
+#include "Light.h"
+#include "Mesh.h"
+#include "Macro.h"
+#include "Math.h"
+#include "Random.h"
+#include "Render.h"
+#include "Texture.h"
+#include "World.h"
+#include "Visible.h"
 
 
 /*-----------------------------------------------------------------------------

@@ -1,5 +1,5 @@
 #ifndef ENTITY
-#include "entity.h"
+#include "Entity.h"
 #endif
 
 class CDeco : CEntity

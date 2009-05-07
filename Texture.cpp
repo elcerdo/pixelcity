@@ -23,25 +23,26 @@
 #define SUFFIX_COUNT        (sizeof (suffix) / sizeof (char*))
 #define NAME_COUNT          (sizeof (name) / sizeof (char*))
 
-#include <windows.h>
-#include <stdio.h>
-#include <math.h>
-#include <gl\gl.h>
-#include <gl\glu.h>
-#include <gl\glaux.h>
+#include <cstdio>
+#include <cmath>
+#include <cstring>
+#include <cstdlib>
+#include <GL/gl.h>
+#include <GL/glu.h>
 
-#include "gltypes.h"
-#include "building.h"
-#include "camera.h"
-#include "car.h"
-#include "light.h"
-#include "macro.h"
-#include "random.h"
-#include "render.h"
-#include "sky.h"
-#include "texture.h"
-#include "world.h"
-#include "win.h"
+#include "Linux.h"
+#include "Building.h"
+#include "Camera.h"
+#include "Car.h"
+#include "Light.h"
+#include "Macro.h"
+#include "Random.h"
+#include "Render.h"
+#include "Sky.h"
+#include "Texture.h"
+#include "World.h"
+#include "Win.h"
+#include "glTypes.h"
 
 static char*        prefix[] = 
 {

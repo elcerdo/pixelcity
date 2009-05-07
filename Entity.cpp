@@ -14,19 +14,19 @@
 
 -----------------------------------------------------------------------------*/
 
-#include <windows.h>
-#include <math.h>
-#include <gl\gl.h>
+#include <cstdlib>
+#include <cmath>
+#include <GL/gl.h>
 
-#include "camera.h"
-#include "entity.h"
-#include "macro.h"
-#include "math.h"
-#include "render.h"
-#include "texture.h"
-#include "world.h"
-#include "visible.h"
-#include "win.h"
+#include "Camera.h"
+#include "Entity.h"
+#include "Macro.h"
+#include "Math.h"
+#include "Render.h"
+#include "Texture.h"
+#include "World.h"
+#include "Visible.h"
+#include "Win.h"
 
 struct entity
 {

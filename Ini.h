@@ -1,8 +1,10 @@
-int       IniInt (char* entry);
-void      IniIntSet (char* entry, int val);
-float     IniFloat (char* entry);
-void      IniFloatSet (char* entry, float val);
-char*     IniString (char* entry);
-void      IniStringSet (char* entry, char* val);
-void      IniVectorSet (char* entry, GLvector v);
-GLvector  IniVector (char* entry);
+#include <string>
+
+int       IniInt (const std::string & entry);
+void      IniIntSet (const std::string & entry, int val);
+float     IniFloat (const std::string & entry);
+void      IniFloatSet (const std::string & entry, float val);
+std::string IniString (const std::string & entry);
+void      IniStringSet (const std::string & entry, const std::string & val);
+void      IniVectorSet (const std::string & entry, GLvector v);
+GLvector  IniVector (const std::string & entry);

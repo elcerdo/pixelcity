@@ -16,25 +16,24 @@
 #define MOVEMENT_SPEED  0.61f
 #define CAR_SIZE        3.0f
 
-#include <windows.h>
-#include <math.h>
-#include <gl\gl.h>
-#include <gl\glu.h>
-#include <gl\glaux.h>
-#include "glTypes.h"
+#include <cmath>
+#include <GL/gl.h>
+#include <GL/glu.h>
 
-#include "building.h"
-#include "car.h"
-#include "camera.h"
-#include "mesh.h"
-#include "macro.h"
-#include "math.h"
-#include "random.h"
-#include "render.h"
-#include "texture.h"
-#include "world.h"
-#include "visible.h"
-#include "win.h"
+#include "Linux.h"
+#include "glTypes.h"
+#include "Building.h"
+#include "Car.h"
+#include "Camera.h"
+#include "Mesh.h"
+#include "Macro.h"
+#include "Math.h"
+#include "Random.h"
+#include "Render.h"
+#include "Texture.h"
+#include "World.h"
+#include "Visible.h"
+#include "Win.h"
 
 static GLvector           direction[] = 
 {

@@ -22,28 +22,27 @@
 #define FONT_SIZE           (LOGO_PIXELS - LOGO_PIXELS / 8)
 #define BLOOM_SCALING       0.07f
 
-#include <windows.h>
-#include <stdio.h>
-#include <time.h>
-#include <stdarg.h>
-#include <math.h>
+#include <cstdio>
+#include <ctime>
+#include <cstdarg>
+#include <cmath>
+#include <GL/gl.h>
+#include <GL/glu.h>
 
-#include <gl\gl.h>
-#include <gl\glu.h>
-
-#include "gltypes.h"
-#include "entity.h"
-#include "car.h"
-#include "camera.h"
-#include "ini.h"
-#include "light.h"
-#include "macro.h"
-#include "math.h"
-#include "render.h"
-#include "sky.h"
-#include "texture.h"
-#include "world.h"
-#include "win.h"
+#include "Linux.h"
+#include "glTypes.h"
+#include "Entity.h"
+#include "Car.h"
+#include "Camera.h"
+#include "Ini.h"
+#include "Light.h"
+#include "Macro.h"
+#include "Math.h"
+#include "Render.h"
+#include "Sky.h"
+#include "Texture.h"
+#include "World.h"
+#include "Win.h"
 
 static	PIXELFORMATDESCRIPTOR pfd =			
 {

@@ -23,8 +23,7 @@
 #define TEMPERING_SHIFT_U(y)  (y >> 11)
 #define UPPER_MASK            0x80000000 
 
-#include <memory.h>
-#include "random.h"
+#include "Random.h"
 
 static int              k = 1;
 static unsigned long    mag01[2] = {0x0, MATRIX_A};

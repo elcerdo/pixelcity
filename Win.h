@@ -5,7 +5,7 @@
 #define VERSION_MINOR       0
 #define VERSION_REVISION    5
 //Best to disable screensaver mode when working on the program.
-#define SCREENSAVER         1
+#define SCREENSAVER         0
 //Controls the density of cars.
 #define CARS                500
 //The "dead zone" along the edge of the world, with super-low detail.
@@ -39,7 +39,7 @@ enum
   WEST
 };
 
-HWND  WinHwnd (void);
+//HWND  WinHwnd (void);
 void  WinPopup (char* message, ...);
 void  WinTerm (void);
 bool  WinInit (void);

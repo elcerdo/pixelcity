@@ -10,14 +10,15 @@
 
 -----------------------------------------------------------------------------*/
 
-#include <windows.h>
-#include <stdio.h>
-#include <gl\gl.h>
-#include <math.h>
+#include <cstdio>
+#include <cstring>
+#include <cmath>
+#include <GL/gl.h>
 
-#include "math.h"
+#include "Linux.h"
+#include "Math.h"
+#include "Macro.h"
 #include "glTypes.h"
-#include "macro.h"
 
 /*-----------------------------------------------------------------------------
 

@@ -12,21 +12,20 @@
 
 #define MAX_VBUFFER         256
 
-#include <windows.h>
-#include <math.h>
-#include <gl\gl.h>
-#include "glTypes.h"
+#include <cmath>
+#include <GL/gl.h>
 
-#include "building.h"
-#include "deco.h"
-#include "light.h"
-#include "mesh.h"
-#include "macro.h"
-#include "math.h"
-#include "random.h"
-#include "texture.h"
-#include "world.h"
-#include "win.h"
+#include "glTypes.h"
+#include "Building.h"
+#include "Deco.h"
+#include "Light.h"
+#include "Mesh.h"
+#include "Macro.h"
+#include "Math.h"
+#include "Random.h"
+#include "Texture.h"
+#include "World.h"
+#include "Win.h"
 
 //This is used by the recursive roof builder to decide what items may be added.
 enum
@@ -743,7 +742,7 @@ void CBuilding::CreateModern ()
   _mesh->QuadStripAdd (index_list, points);
   _mesh_flat->QuadStripAdd (index_list, points);
   //add the fan to cap the top of the buildings
-  for (i = 0; i < points / 2; i++)
+  for (int i = 0; i < points / 2; i++)
     index_list[i + 1] = points - (1 + i * 2);
   p.position.x = _center.x;
   p.position.z = _center.z;

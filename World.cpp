@@ -15,29 +15,28 @@
 #define HUE_COUNT         (sizeof(hue_list)/sizeof(float))
 #define LIGHT_COLOR_COUNT (sizeof(light_colors)/sizeof(HSL))
 
-#include <windows.h>
-#include <gl\gl.h>
-#include <gl\glu.h>
-#include <gl\glaux.h>
-#include <math.h>
-#include <time.h>
+#include <GL/gl.h>
+#include <GL/glu.h>
+#include <cmath>
+#include <ctime>
 
+#include "Linux.h"
 #include "glTypes.h"
-#include "building.h"
-#include "car.h"
-#include "deco.h"
-#include "camera.h"
-#include "light.h"
-#include "macro.h"
-#include "math.h"
-#include "mesh.h"
-#include "random.h"
-#include "render.h"
-#include "sky.h"
-#include "texture.h"
-#include "visible.h"
-#include "win.h"
-#include "world.h"
+#include "Building.h"
+#include "Car.h"
+#include "Deco.h"
+#include "Camera.h"
+#include "Light.h"
+#include "Macro.h"
+#include "Math.h"
+#include "Mesh.h"
+#include "Random.h"
+#include "Render.h"
+#include "Sky.h"
+#include "Texture.h"
+#include "Visible.h"
+#include "Win.h"
+#include "World.h"
 
 struct plot
 {

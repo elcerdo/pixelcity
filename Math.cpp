@@ -10,10 +10,10 @@
 
 -----------------------------------------------------------------------------*/
 
-#include <math.h>
+#include <cmath>
 
-#include "macro.h"
-#include "math.h"
+#include "Macro.h"
+#include "Math.h"
 
 /*-----------------------------------------------------------------------------
 Keep an angle between 0 and 360

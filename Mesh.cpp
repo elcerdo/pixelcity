@@ -15,13 +15,13 @@
 
 -----------------------------------------------------------------------------*/
 
-#include <windows.h>
-#include <gl\gl.h>
-#include <gl\glu.h>
-#include <gl\glaux.h>
-#include "glTypes.h"
+#include <cstdlib>
+#include <cstring>
+#include <GL/gl.h>
+#include <GL/glu.h>
 
-#include "mesh.h"
+#include "glTypes.h"
+#include "Mesh.h"
 
 /*-----------------------------------------------------------------------------
 

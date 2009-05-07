@@ -10,13 +10,11 @@
 
 -----------------------------------------------------------------------------*/
 
-#include <windows.h>
-#include <float.h>
-#include <math.h>
-#include <gl\gl.h>
+#include <cmath>
+#include <GL/gl.h>
 
-#include "macro.h"
-#include "math.h"
+#include "Macro.h"
+#include "Math.h"
 #include "glTypes.h"
 
 /*-----------------------------------------------------------------------------

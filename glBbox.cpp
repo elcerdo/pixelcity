@@ -13,9 +13,9 @@
 
 #define MAX_VALUE               999999999999999.9f
 
-#include <math.h>
+#include <cmath>
 
-#include "macro.h"
+#include "Macro.h"
 #include "glTypes.h"
 
 /*-----------------------------------------------------------------------------
