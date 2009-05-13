@@ -47,5 +47,6 @@ struct PIXELFORMATDESCRIPTOR {
 };
 
 unsigned long GetTickCount();
+void SwapBuffers();
 void ZeroMemory(void* dest,size_t length);
 

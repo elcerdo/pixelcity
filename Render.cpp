@@ -24,6 +24,7 @@
 
 #include <cstdio>
 #include <ctime>
+#include <cstring>
 #include <cstdarg>
 #include <cmath>
 #include <GL/gl.h>
@@ -44,27 +45,6 @@
 #include "World.h"
 #include "Win.h"
 
-static	PIXELFORMATDESCRIPTOR pfd =			
-{
-	sizeof(PIXELFORMATDESCRIPTOR),			
-	1,											  // Version Number
-	PFD_DRAW_TO_WINDOW |			// Format Must Support Window
-	PFD_SUPPORT_OPENGL |			// Format Must Support OpenGL
-	PFD_DOUBLEBUFFER,					// Must Support Double Buffering
-	PFD_TYPE_RGBA,						// Request An RGBA Format
-	32,										    // Select Our glRgbaDepth
-	0, 0, 0, 0, 0, 0,					// glRgbaBits Ignored
-	0,											  // No Alpha Buffer
-	0,											  // Shift Bit Ignored
-	0,											  // Accumulation Buffers
-	0, 0, 0, 0,								// Accumulation Bits Ignored
-	16,											  // Z-Buffer (Depth Buffer)  bits
-	0,											  // Stencil Buffers
-	1,											  // Auxiliary Buffers
-	PFD_MAIN_PLANE,						// Main Drawing Layer
-	0,											  // Reserved
-	0, 0, 0										// Layer Masks Ignored
-};
 
 static char             help[] = 
   "ESC - Exit!\n" 
@@ -119,8 +99,6 @@ enum
 };
 #endif 
 
-static HDC			        hDC;
-static HGLRC		        hRC;
 static float            render_aspect;
 static float            fog_distance;
 static int              render_width;
@@ -489,10 +467,10 @@ void RenderResize (void)
 void RenderTerm (void)
 {
 
-  if (!hRC)
-    return;
-  wglDeleteContext (hRC);
-  hRC = NULL;
+  //if (!hRC)
+  //  return;
+  //wglDeleteContext (hRC);
+  //hRC = NULL;
 
 }
 
@@ -503,54 +481,54 @@ void RenderTerm (void)
 void RenderInit (void)
 {
 
-  HWND              hWnd;
-	unsigned		      PixelFormat;
-  HFONT	            font;		
-	HFONT	            oldfont;
+  //HWND              hWnd;
+  //  unsigned		      PixelFormat;
+  //HFONT	            font;		
+  //  HFONT	            oldfont;
 
-  hWnd = WinHwnd ();
-  if (!(hDC = GetDC (hWnd))) 
-		YOUFAIL ("Can't Create A GL Device Context.") ;
-	if (!(PixelFormat = ChoosePixelFormat(hDC,&pfd)))
-		YOUFAIL ("Can't Find A Suitable PixelFormat.") ;
-  if(!SetPixelFormat(hDC,PixelFormat,&pfd))
-		YOUFAIL ("Can't Set The PixelFormat.");
-	if (!(hRC = wglCreateContext (hDC)))	
-		YOUFAIL ("Can't Create A GL Rendering Context.");
-  if(!wglMakeCurrent(hDC,hRC))	
-		YOUFAIL ("Can't Activate The GL Rendering Context.");
-  //Load the fonts for printing debug info to the window.
-  for (int i = 0; i < FONT_COUNT; i++) {
-	  fonts[i].base_char = glGenLists(96); 
-	  font = CreateFont (FONT_SIZE,	0, 0,	0,	
-				  FW_BOLD, FALSE,	FALSE, FALSE,	DEFAULT_CHARSET,	OUT_TT_PRECIS,		
-				  CLIP_DEFAULT_PRECIS,	ANTIALIASED_QUALITY, FF_DONTCARE|DEFAULT_PITCH,
-				  fonts[i].name);
-	  oldfont = (HFONT)SelectObject(hDC, font);	
-	  wglUseFontBitmaps(hDC, 32, 96, fonts[i].base_char);
-	  SelectObject(hDC, oldfont);
-	  DeleteObject(font);		
-  }
-  //If the program is running for the first time, set the defaults.
-  if (!IniInt ("SetDefaults")) {
-    IniIntSet ("SetDefaults", 1);
-    IniIntSet ("Effect", EFFECT_BLOOM);
-    IniIntSet ("ShowFog", 1);
-  }
-  //load in our settings
-  letterbox = IniInt ("Letterbox") != 0;
-  show_wireframe = IniInt ("Wireframe") != 0;
-  show_fps = IniInt ("ShowFPS") != 0;
-  show_fog = IniInt ("ShowFog") != 0;
-  effect = IniInt ("Effect");
-  flat = IniInt ("Flat") != 0;
-  fog_distance = WORLD_HALF;
-  //clear the viewport so the user isn't looking at trash while the program starts
-  glViewport (0, 0, WinWidth (), WinHeight ());
-  glClearColor (0.0f, 0.0f, 0.0f, 1.0f);
-  glClear (GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-  SwapBuffers (hDC);
-  RenderResize ();
+  //hWnd = WinHwnd ();
+  //if (!(hDC = GetDC (hWnd))) 
+  //  	YOUFAIL ("Can't Create A GL Device Context.") ;
+  //  if (!(PixelFormat = ChoosePixelFormat(hDC,&pfd)))
+  //  	YOUFAIL ("Can't Find A Suitable PixelFormat.") ;
+  //if(!SetPixelFormat(hDC,PixelFormat,&pfd))
+  //  	YOUFAIL ("Can't Set The PixelFormat.");
+  //  if (!(hRC = wglCreateContext (hDC)))	
+  //  	YOUFAIL ("Can't Create A GL Rendering Context.");
+  //if(!wglMakeCurrent(hDC,hRC))	
+  //  	YOUFAIL ("Can't Activate The GL Rendering Context.");
+  ////Load the fonts for printing debug info to the window.
+  //for (int i = 0; i < FONT_COUNT; i++) {
+  //    fonts[i].base_char = glGenLists(96); 
+  //    font = CreateFont (FONT_SIZE,	0, 0,	0,	
+  //  			  FW_BOLD, FALSE,	FALSE, FALSE,	DEFAULT_CHARSET,	OUT_TT_PRECIS,		
+  //  			  CLIP_DEFAULT_PRECIS,	ANTIALIASED_QUALITY, FF_DONTCARE|DEFAULT_PITCH,
+  //  			  fonts[i].name);
+  //    oldfont = (HFONT)SelectObject(hDC, font);	
+  //    wglUseFontBitmaps(hDC, 32, 96, fonts[i].base_char);
+  //    SelectObject(hDC, oldfont);
+  //    DeleteObject(font);		
+  //}
+  ////If the program is running for the first time, set the defaults.
+  //if (!IniInt ("SetDefaults")) {
+  //  IniIntSet ("SetDefaults", 1);
+  //  IniIntSet ("Effect", EFFECT_BLOOM);
+  //  IniIntSet ("ShowFog", 1);
+  //}
+  ////load in our settings
+  //letterbox = IniInt ("Letterbox") != 0;
+  //show_wireframe = IniInt ("Wireframe") != 0;
+  //show_fps = IniInt ("ShowFPS") != 0;
+  //show_fog = IniInt ("ShowFog") != 0;
+  //effect = IniInt ("Effect");
+  //flat = IniInt ("Flat") != 0;
+  //fog_distance = WORLD_HALF;
+  ////clear the viewport so the user isn't looking at trash while the program starts
+  //glViewport (0, 0, WinWidth (), WinHeight ());
+  //glClearColor (0.0f, 0.0f, 0.0f, 1.0f);
+  //glClear (GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+  //SwapBuffers (hDC);
+  //RenderResize ();
 
 }
 
@@ -715,7 +693,7 @@ void RenderUpdate (void)
 
   if (TextureReady () && !EntityReady ()) {
     do_effects (-1);
-    SwapBuffers (hDC);
+    SwapBuffers();
     return;
   }
 	glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST);
@@ -792,6 +770,6 @@ void RenderUpdate (void)
     do_help ();
   glDepthMask (true);
   frames++;
-  SwapBuffers (hDC);
+  SwapBuffers();
 
 }
